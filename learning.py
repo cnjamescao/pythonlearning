@@ -28,3 +28,20 @@ if age >= 18:
 else:
     print('your age is', age)
     print('teenager')
+
+
+
+def move(n, a, b, c):
+    if n == 1:
+        print('move', a, '-->', c)
+        return 1
+    else:
+        x = move(n-1, a, c, b)
+        y = move(1, a, b, c)
+        z = move(n-1, b, a, c)
+        return x + y + z 
+
+
+count = move(5,'A','B','C')
+print(str(count))
+
